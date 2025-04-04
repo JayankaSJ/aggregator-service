@@ -149,6 +149,65 @@ export class CreateCredential1743727942854 implements MigrationInterface {
    docker-compose up
    ```
 
+## Generic Schema
+
+```graphql
+# Query to fetch all issues from a repository
+type Query {
+  # Fetches all issues from a specified repository and platform
+  issues(
+    namespace: String! # Platform/owner/namespace (GitHub/GitLab)
+    repository: String! # Repository name
+    source: String # Platform (GitHub/GitLab, optional)
+  ): [Issue] # Returns a list of issues
+}
+
+# Query to fetch a specific issue by its ID
+type Query {
+  # Fetches a single issue by its ID
+  issue(
+    namespace: String! # Platform/owner/namespace (GitHub/GitLab)
+    repository: String! # Repository name
+    source: String! # Platform (GitHub/GitLab)
+    id: String! # Issue ID
+  ): Issue # Returns a single issue
+}
+
+# Mutation to create a new issue in a repository
+type Mutation {
+  # Creates a new issue in a repository
+  create(
+    namespace: String! # Platform/owner/namespace (GitHub/GitLab)
+    repository: String! # Repository name
+    source: String! # Platform (GitHub/GitLab)
+    input: CreateIssue! # Issue data (title, description)
+  ): Issue # Returns the created issue
+}
+
+# Mutation to update an existing issue
+type Mutation {
+  # Updates an issue by ID in a repository
+  update(
+    namespace: String! # Platform/owner/namespace (GitHub/GitLab)
+    repository: String! # Repository name
+    source: String! # Platform (GitHub/GitLab)
+    id: String! # Issue ID
+    input: UpdateIssue! # Updated issue data
+  ): Issue # Returns the updated issue
+}
+
+# Mutation to delete an issue from a repository
+type Mutation {
+  # Deletes an issue by ID in a repository
+  delete(
+    namespace: String! # Platform/owner/namespace (GitHub/GitLab)
+    repository: String! # Repository name
+    source: String! # Platform (GitHub/GitLab)
+    id: String! # Issue ID
+  ): Boolean # Returns true if deletion was successful
+}
+```
+
 ## API Requests Using cURL
 
 Here are the cURL commands to interact with the Aggregator Service's GraphQL endpoints.
