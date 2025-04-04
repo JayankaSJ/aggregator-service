@@ -1,0 +1,284 @@
+{
+  "info": {
+    "_postman_id": "12140762-585a-4895-aeec-70802e8b1aec",
+    "name": "aggregator-service-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43765913"
+  },
+  "item": [
+    {
+      "name": "github",
+      "item": [
+        {
+          "name": "get all",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"query {   issues(namespace: \\\"jayanka-dev\\\", repository: \\\"technical-test\\\", source: \\\"github\\\") { id title source description  } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"mutation { create(namespace: \\\"jayanka-dev\\\", repository: \\\"technical-test\\\", source: \\\"github\\\" , input: { title:  \\\"Updated Issue Title \\\", description:  \\\"Updated issue description \\\" }) { id title description } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get one",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"query {   issue(namespace: \\\"jayanka-dev\\\", repository: \\\"technical-test\\\", source: \\\"github\\\" , id: \\\"1\\\") { id title source description  } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"mutation { update(namespace: \\\"jayanka-dev\\\", repository: \\\"technical-test\\\", source: \\\"github\\\", id: \\\"1\\\", input: { title:  \\\"new Issue Title \\\", description:  \\\"new issue description \\\" }) { id title source description } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"mutation { delete(namespace: \\\"jayanka-dev\\\", repository: \\\"technical-test\\\", source: \\\"github\\\", id: \\\"4\\\") }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "gitlab",
+      "item": [
+        {
+          "name": "get all",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"query { issues(namespace: \\\"jayanka-dev1\\\", repository: \\\"technical-test\\\", source: \\\"gitlab\\\") { id title source description  } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"mutation { create(namespace: \\\"jayanka-dev1\\\", repository: \\\"technical-test\\\", source: \\\"gitlab\\\" , input: { title:  \\\"Updated Issue Title \\\", description:  \\\"Updated issue description \\\" }) { id title source description } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get one",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"query {   issue(namespace: \\\"jayanka-dev1\\\", repository: \\\"technical-test\\\", source: \\\"gitlab\\\" , id: \\\"1\\\") { id title description  } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"mutation { update(namespace: \\\"jayanka-dev1\\\", repository: \\\"technical-test\\\", source: \\\"gitlab\\\", id: \\\"1\\\", input: { title:  \\\"new Issue Title \\\", description:  \\\"new issue description \\\" }) { id title source description } }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"query\": \"mutation { delete(namespace: \\\"jayanka-dev1\\\", repository: \\\"technical-test\\\", source: \\\"gitlab\\\", id: \\\"1\\\") }\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "get all",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\": \"query { issues(namespace: \\\"jayanka-dev\\\", repository: \\\"technical-test\\\") { id title source, description  } }\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": [""]
+        }
+      },
+      "response": []
+    }
+  ]
+}
