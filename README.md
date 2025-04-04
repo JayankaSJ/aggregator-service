@@ -1,3 +1,26 @@
+# Index
+
+1. [Aggregator Service Overview](#aggregator-service)
+2. [List of Used Libraries and Their Purposes](#list-of-used-libraries-and-their-purposes)
+   - [Runtime Dependencies](#runtime-dependencies)
+   - [Development Dependencies](#development-dependencies)
+3. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [How to Get API Keys and Store Them in the Database](#how-to-get-api-keys-and-store-them-in-the-database)
+4. [Setup and Installation](#setup-and-installation)
+5. [Generic Schema](#generic-schema)
+6. [API Requests Using cURL](#api-requests-using-curl)
+   - [Get All Issues (GitHub + GitLab)](#get-all-issues-github--gitlab)
+   - [Get All Issues from Specific Source (GitHub)](#get-all-issues-from-specific-source-github)
+   - [Get One Issue](#get-one-issue)
+   - [Create an Issue](#create-an-issue)
+   - [Update an Issue](#update-an-issue)
+   - [Delete an Issue](#delete-an-issue)
+7. [Postman Collection](#postman-collection)
+8. [Troubleshooting](#troubleshooting)
+   - [Backend Fails to Connect to Database on Startup](#backend-fails-to-connect-to-database-on-startup)
+   - [Initial Migration Fails Due to Database Delay](#initial-migration-fails-due-to-database-delay)
+
 # Aggregator Service
 
 The Aggregator Service is a scalable and containerized Node.js backend built to manage and aggregate issue APIs from GitHub and GitLab through a unified GraphQL interface. Developed with TypeScript and Docker, this service simplifies the process of interacting with issue data across both platforms, offering flexibility for future API integrations.
