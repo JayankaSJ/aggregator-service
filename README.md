@@ -37,15 +37,6 @@ This service aggregates external APIs (GitHub GraphQL and GitLab APIs) and expos
 - **inversify**  
   _Purpose_: A powerful and flexible Inversion of Control (IoC) container for TypeScript. It’s used for dependency injection, helping to manage class dependencies and organize code.
 
-- **pg**  
-  _Purpose_: A PostgreSQL client for Node.js. It's used to interact with the PostgreSQL database to store credentials and manage data.
-
-- **pg-hstore**  
-  _Purpose_: A module used with `pg` for serializing and deserializing JSON data for PostgreSQL.
-
-- **reflect-metadata**  
-  _Purpose_: Provides metadata reflection capabilities for TypeScript. It is required for using decorators, such as those in `inversify`.
-
 - **type-graphql**  
   _Purpose_: A library that simplifies building GraphQL APIs with TypeScript by generating the schema from TypeScript classes and decorators.
 
@@ -57,23 +48,8 @@ This service aggregates external APIs (GitHub GraphQL and GitLab APIs) and expos
 
 ### Development Dependencies
 
-- **@types/graphql**  
-  _Purpose_: TypeScript type definitions for the GraphQL library, providing type safety when working with GraphQL.
-
-- **@types/node**  
-  _Purpose_: TypeScript type definitions for Node.js, ensuring type safety when working with Node.js APIs.
-
-- **@types/winston**  
-  _Purpose_: TypeScript type definitions for Winston, providing type safety when working with the logging library.
-
 - **ts-node**  
   _Purpose_: A TypeScript execution environment for Node.js. It allows running TypeScript files directly without compiling them first.
-
-- **tsc-alias**  
-  _Purpose_: A tool for TypeScript to resolve path aliases. It helps manage paths in large TypeScript projects for cleaner imports.
-
-- **tsconfig-paths**  
-  _Purpose_: A utility to resolve TypeScript paths when using `ts-node` or running TypeScript in Node.js.
 
 - **typescript**  
   _Purpose_: The core TypeScript language support that provides static typing for JavaScript and is used to compile TypeScript files to JavaScript.
@@ -124,7 +100,7 @@ To set up the table for storing API keys and endpoints, follow these steps:
 
 #### Migration Code Example
 
-Here is the code used for the migration [CreateCredential1743727942854.ts](migrations/versions/CreateCredential1743727942854.ts):
+Here is the code used for the migration [create-credentials.ts](migrations/versions/1743727942854-create-credentials.ts):
 
 ```typescript
 import { MigrationInterface, QueryRunner } from "typeorm";
@@ -159,7 +135,7 @@ export class CreateCredential1743727942854 implements MigrationInterface {
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/JayankaSJ/aggregator-service.git
    cd aggregator-service
 
    docker-compose build
